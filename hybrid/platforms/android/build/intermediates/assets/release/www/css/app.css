@@ -8,6 +8,6 @@
 
 .headerStyle{color: #595959;font-family: inherit;font-style: normal;font-weight: 500; margin: 8px 0;padding: 0 0 2px;font-size: 2.125rem}
 
-.newLineStyle{    bottom: 0px;position: fixed;width: calc(100% - 52px);-moz-calc:(100% - 52px);-webkit-calc:(100% - 52px);   padding-top: 15px;}
+.newLineStyle{  padding-top: 25px;}
 
 .newo_content{margin-top: 30px;};

@@ -5,8 +5,8 @@
 /*
  * Your customer ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery',"viewModels/dashboard", 'ojs/ojknockout', 'promise', 'ojs/ojlistview', 'ojs/ojarraytabledatasource', 'ojs/ojinputtext', 'ojs/ojlabel'],
-        function (oj, ko, $,dash) {
+define(['ojs/ojcore', 'knockout', 'jquery', "viewModels/dashboard", 'ojs/ojknockout', 'promise', 'ojs/ojlistview', 'ojs/ojarraytabledatasource', 'ojs/ojinputtext', 'ojs/ojlabel'],
+        function (oj, ko, $, dash) {
 
 
 
@@ -23,6 +23,8 @@ define(['ojs/ojcore', 'knockout', 'jquery',"viewModels/dashboard", 'ojs/ojknocko
                 self.inpAmount = ko.observable("123412");
                 self.inpPrice = ko.observable("5.2");
                 self.inpRetailPrice = ko.observable("10");
+
+                self.isShow = ko.observable(true);
                 // Below are a subset of the ViewModel methods invoked by the ojModule binding
                 // Please reference the ojModule jsDoc for additional available methods.
 
@@ -61,7 +63,12 @@ define(['ojs/ojcore', 'knockout', 'jquery',"viewModels/dashboard", 'ojs/ojknocko
                     })
                 };
 
+//                self.hideList = function () {
+//                    self.isShow(false);
+//                };
+
                 self.onAddCellClick = function () {
+   
 
                     var inpData = {
                         "item": self.inpProduct(),
