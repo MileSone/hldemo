@@ -1,0 +1,209 @@
+$patternCommonImageDir:....images !default;
+$patternCommonFontDir   ....fonts;
+$contrastBackground1Color #313334 !default;
+$contrastTextColor     #ffffff !default;
+ todo needs fixing
+
+@import ....ojutilitiesoj.utilities;
+
+.demo-padding {
+    padding:5px;
+    box-sizing:border-box;
+}
+
+.demo-container {
+  overflow-x:auto;
+}
+
+.demo-disable-bg-image {
+  background-image:none;
+}
+
+@font-face {
+  font-family 'AppFont';
+  src:url($patternCommonFontDir + 'App_iconfont.woff') format('woff');
+  font-weight normal;
+  font-style normal;
+}
+
+.demo-icon-font {
+  @include oj-icon-font-base(
+       $fontSize  16px,
+       $fontFamily AppFont);
+}
+
+
+.demo-icon-font-24 {
+  @extend .demo-icon-font;
+  font-size 24px;
+}
+
+ Icons with a suffix -16 were designed to look best at 16px. 
+
+.demo-bookmark-icon-16before {
+  content e606;
+}
+.demo-grid-icon-16before {
+  content e607;
+}
+.demo-list-icon-16before {
+  content e608;
+}
+.demo-gear-icon-16before {
+  content e609;
+}
+.demo-filter-icon-16before {
+  content e907;
+}
+.demo-share-icon-16before {
+  content e90a;
+}
+
+ Icons with a suffix -24 were designed to look best at 24px. 
+.demo-home-icon-24before {
+  content e600;
+}
+.demo-education-icon-24before {
+  content e601;
+}
+.demo-catalog-icon-24before {
+  content e602;
+}
+.demo-palette-icon-24before {
+  content e603;
+}
+.demo-library-icon-24before {
+  content e604;
+}
+.demo-chat-icon-24before {
+  content e605;
+}
+.demo-edit-icon-24before {
+  content e906;
+}
+.demo-fire-icon-24before {
+  content e908;
+}
+.demo-person-icon-24before {
+  content e909;
+}
+.demo-signout-icon-24before {
+  content e90b;
+}
+.demo-info-icon-24before {
+  content e900;
+}
+.demo-copy-icon-24before {
+  content e901;
+}
+.demo-people-icon-24before {
+  content e902;
+}
+.demo-chart-icon-24before {
+  content e903;
+}
+.demo-garbage-icon-24before {
+  content e904;
+}
+.demo-download-icon-24before {
+  content e905;
+}
+
+.demo-dropbox-icon-24before {
+  content e90f;
+}
+.demo-facebook-icon-24before {
+  content e910;
+}
+.demo-documents-icon-24before {
+  content e912;
+}
+.demo-email-icon-24before {
+  content e913;
+}
+
+ Dimensions of logo icon (Oracle)
+ Use full width and height of Oracle icon,
+ use oj-icon-content mixin for high res icon
+.demo-oracle-icon {
+  @include oj-icon-content($icon url($patternCommonImageDir + oracle_logo.svg));
+  width 137px;
+  height 18px;
+   Add padding between oracle logo and application name
+  @include oj-ltr() {
+    padding-right 4px;
+  }
+  @include oj-rtl() {
+    padding-left 4px;
+  }
+}
+
+ Needed to override oj-iconbefore displayinline-block which causes
+ the browser to think the svg image's height is 0.  The svg image does not
+ have widthheight properties in is file so that it is easily scalable
+ using css.
+.demo-oracle-iconbefore {
+  display inline;
+}
+
+ Person avatar used in small-screen layout
+.demo-avatar-icon {
+  @include oj-icon-content($icon url($patternCommonImageDir + avatar_24px.png), 
+    $iconHiRes url($patternCommonImageDir + avatar_24px_2x.png)) {
+    width 24px;
+    height 24px;
+  };
+}
+
+ adds space above and below large items in a recipe
+.demo-recipe-spacing {
+  margin 20px 0;
+  width 100%;
+}
+
+ style tables showing things like icons in the recipe
+.demo-recipe-table th,
+.demo-recipe-table td
+{
+  border1px solid lightgrey;
+  border-collapsecollapse;
+  width 10em;
+  text-align center;
+  padding 10px;
+}
+
+ style tables showing demo info
+.demo-info-table th,
+.demo-info-table td
+{
+  border1px solid lightgrey;
+  border-collapsecollapse;
+  padding 10px;
+}
+Apply contrast background 
+.demo-panel-contrast1 {
+  background-color $contrastBackground1Color;
+  color $contrastTextColor
+}
+
+some of the demos refer to italicboldunderline classes
+.italic {
+  font-style italic;
+}
+
+.bold {
+  font-weight bold; 
+}
+
+.underline {
+  text-decoration underline;
+}
+
+Add border to table equal to adding broder=1 on table
+.demo-table {
+  border-collapse collapse;
+}
+
+.demo-table td {
+   border 1px solid #000;
+}

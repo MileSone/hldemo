@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\projects\JEThualian\MySampleApp\hybrid\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.3.0\release\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="921203643cb1b729d169457a1cc2e009381396a7">
+        <dex dex="D:\projects\JEThualian\MySampleApp\hybrid\platforms\android\build\intermediates\pre-dexed\release\CordovaLib-6.3.0-release_3672c5bdedb32c8767a18fa1a15305680cea3ef1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\JEThualian\MySampleApp\hybrid\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.3.0\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="df1a7a6af20c4eca090c1f535b77951ef6025bfb">
+        <dex dex="D:\projects\JEThualian\MySampleApp\hybrid\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-6.3.0-debug_96dd99b8c1f5f3a8c9c41adbba56ad17ff1decbe.jar" />
+    </item>
+
+</items>

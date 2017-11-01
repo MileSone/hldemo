@@ -1,0 +1,45 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>账务查询</h1>
+  <div id="account-list" style="" class="demo-padding demo-container">
+      <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+        <oj-list-view style="width:100%;height:80vh;overflow-x:hidden" id="listview" aria-label="list using array" 
+                data="[[dataSource]]" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('server_template', true)]]" selection-mode="single" scroll-policy="loadMoreOnScroll" scroll-policy-options.fetch-size="15"
+				>
+        </oj-list-view>
+        
+        <script type="text/html" id="server_template">
+            <li data-bind="attr: {id: $data['accountNo']}">
+                <div class="oj-flex">
+                    <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                    </div>
+                    <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                        <div class="oj-flex row">
+                            <div class="oj-lg-12">
+                                <span class="header" data-bind="text: '账号: '+accountNo"></span>
+                            </div>
+                        </div>
+                        <div class="oj-flex row">
+                            <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                <span class="data"><b>描述: </b><span data-bind="text: accountDesc"></span></span>
+                            </div>
+                            <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                <span class="data"><b>余额: </b><span data-bind="text: credit"></span></span>
+                            </div>
+							<div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                <span class="data"><b>营业部: </b><span data-bind="text: locationName"></span></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+        </script>
+
+        
+      </div>
+    </div>
+</div>

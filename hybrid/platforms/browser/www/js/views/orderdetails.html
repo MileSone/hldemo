@@ -1,0 +1,75 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <div class="headerStyle">订单详情 <span style="float: right"><oj-button id='button1' on-click='[[onBackClick]]'>返回</oj-button></span></div>
+    <div id="order-list" style="" class="demo-padding demo-container">
+        <div>
+            <span>订单号：</span><span data-bind="text: orderNo"></span>
+        </div>
+        <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+            <oj-list-view style="width:100%;height:40vh;overflow-x:hidden" id="listview" aria-label="list using array" 
+                          data="[[dataSource]]" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('server_template', true)]]" selection-mode="single"
+                          >
+            </oj-list-view>
+
+            <script type="text/html" id="server_template">
+                <li data-bind="attr: {id: $data['orderNo']}">
+                    <div class="oj-flex">
+                        <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                        </div>
+                        <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                            <div class="oj-flex row">
+                                <div class="oj-lg-12">
+                                    <span class="header" data-bind="text: '货品: '+item"></span>
+                                </div>
+                            </div>
+                            <div class="oj-flex row">
+                                <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                    <span class="data"><b>描述: </b><span data-bind="text: itemDesc"></span></span>
+                                </div>
+                                <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                    <span class="data"><b>订货量: </b><span data-bind="text: qtyOrdered"></span></span>
+                                </div>
+                                <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                    <span class="data"><b>单价: </b><span data-bind="text: unitCost"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                </script>
+
+                <div class="newLineStyle">
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-6 oj-flex-item">货品</div>
+                        <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{inpProduct}}"></oj-input-text></div>
+                    </div>
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-6 oj-flex-item">描述</div>
+                        <div class="oj-sm-6 oj-flex-item"><oj-text-area value="{{inpDetail}}"></oj-input-text></div>
+                    </div>
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-6 oj-flex-item">订货量</div>
+                        <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{inpAmount}}"></oj-input-text></div>
+                    </div>
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-6 oj-flex-item">单价</div>
+                        <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{inpPrice}}"></oj-input-text></div>
+                    </div>
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-6 oj-flex-item">零售单价</div>
+                        <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{inpRetailPrice}}"></oj-input-text></div>
+                    </div>
+                    <div class="oj-flex oj-flex-items-pad">
+                        <div class="oj-sm-10 oj-flex-item"></div>
+                        <div class="oj-sm-2 oj-flex-item"><oj-button on-click='[[onAddCellClick]]'>添加</oj-button></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

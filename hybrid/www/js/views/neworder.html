@@ -1,0 +1,36 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="oj-hybrid-padding">
+
+    <div><span class="headerStyle">新建订单</span> <span style="float: right"><oj-button on-click='[[onBackClick]]'>返回</oj-button></span></div>
+
+    <div   class="newo_content">
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-6 oj-flex-item">地址</div>
+            <div class="oj-sm-6 oj-flex-item"><oj-text-area id="text-area" value="{{address}}"></oj-text-area></div>
+        </div>
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-6 oj-flex-item">电话</div>
+            <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{phoneNumber}}"></oj-input-text></div>
+        </div>
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-6 oj-flex-item">邮编</div>
+            <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{locID}}"></oj-input-text></div>
+        </div>
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-6 oj-flex-item">供应商ID</div>
+            <div class="oj-sm-6 oj-flex-item"><oj-input-text value="{{supID}}"></oj-input-text></div>
+        </div>
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-6 oj-flex-item">供应商名</div>
+            <div class="oj-sm-6 oj-flex-item"><oj-input-text id="text-input" value="{{supName}}"></oj-input-text></div>
+        </div>
+        <div class="oj-flex oj-flex-items-pad" style="margin-top: 30px;">
+            <div class="oj-sm-8 oj-flex-item"></div>
+            <div class="oj-sm-4 oj-flex-item"><oj-button on-click='[[createNewOrder]]'>新建订单</oj-button></div>
+        </div>
+    </div>
+</div>
