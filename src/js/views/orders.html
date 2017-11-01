@@ -1,0 +1,41 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <div><span class="headerStyle">订单管理</span> <span style="float: right"><oj-button on-click='[[onCreateOrderClick]]'>新建订单</oj-button></span></div>
+    <div id="sampleDemo" style="clear: both;" class="demo-padding demo-container">
+        <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+            <oj-list-view style="width:100%;height:80vh;overflow-x:hidden" id="listview" class="listview" aria-label="list using array" data="[[dataSource]]" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('server_template', true)]]" selection-mode="single" selection="{{selectionItems}}"
+                          on-current-item-changed="[[gotoDetails]]" >
+            </oj-list-view>
+
+            <script type="text/html" id="server_template">
+                <li data-bind="attr: {id: $data['orderNo']}">
+                    <div class="oj-flex">
+                        <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                        </div>
+                        <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                            <div class="oj-flex row">
+                                <div class="oj-lg-12">
+                                    <span class="header" data-bind="text: '地址: '+address_1"></span>
+                                </div>
+                            </div>
+                            <div class="oj-flex row">
+                                <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                    <span class="data"><b>电话: </b><span data-bind="text: contactPhone"></span></span>
+                                </div>
+                                <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                    <span class="data"><b>订单号: </b><span data-bind="text: orderNo"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                </script>
+
+
+            </div>
+        </div>
+    </div>
